@@ -57,3 +57,23 @@ console.log(fibonacci(4)) // 2
 console.log(fibonacci(5)) // 3
 console.log(fibonacci(8)) // 13
 console.log(fibonacci(13)) // 144
+
+const binarySearch = (array, element) => {
+  if (!Array.length) return false
+  
+  if (array.length === 1) {
+    return array[0] === element
+  }
+  
+  const center = Math.floor(array.length / 2)
+
+  if (array[center] === element) return true
+
+  const isRight = element > array[center]
+
+  return binarySearch(isRight ? array.slice(center + 1) : array.slice(0, center), element)
+}
+
+console.log(binarySearch([3], 3)) // true
+console.log(binarySearch([1, 2, 3, 4, 5], 4)) // true
+console.log(binarySearch([1, 2, 3, 5, 6], 4)) // false

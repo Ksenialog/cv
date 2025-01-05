@@ -124,10 +124,10 @@ const searchSubtask = (leaderboard, leaguePoints, topBorder, leftBorder, bottomB
 const searchScore = (leaderboard, leaguePoints) => {
   if (!(leaderboard.length && leaderboard.length)) return null
   
-  const bottomBoarder = leaderboard.length - 1 // 3
+  const bottomBorder = leaderboard.length - 1 // 3
   const rightBorder = leaderboard[0].length - 1 // 3
   
-  return searchSubtask(leaderboard, leaguePoints, 0, 0, bottomBoarder, rightBorder)
+  return searchSubtask(leaderboard, leaguePoints, 0, 0, bottomBorder, rightBorder)
 }
 
 console.log(searchScore(data, 64))

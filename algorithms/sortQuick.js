@@ -26,17 +26,17 @@ const partition = (array, left, right) => {
   return left
 }
 
-const quickSort = (array, left = 0, right = array.length - 1) => {
+const sortQuick = (array, left = 0, right = array.length - 1) => {
   const pivotIndex = partition(array, left, right)
   if (left < pivotIndex - 1) {
-    quickSort(array, left, pivotIndex - 1)
+    sortQuick(array, left, pivotIndex - 1)
   }
   
   if (pivotIndex < right) {
-    quickSort(array, pivotIndex, right)
+    sortQuick(array, pivotIndex, right)
   }
   
   return array
 }
 
-console.log(quickSort([56, 87, 18, 92, 42, 31, 44, 82, 36, 91]))
+console.log(sortQuick([56, 87, 18, 92, 42, 31, 44, 82, 36, 91]))

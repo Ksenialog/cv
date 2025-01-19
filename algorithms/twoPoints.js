@@ -8,6 +8,9 @@ const moveZeroes = function(nums) {
         if (nums[next]) {
           [nums[first], nums[next]] = [nums[next], nums[first]]
           first += 1
+          next += 1
+  
+          continue
         }
         
         next += 1

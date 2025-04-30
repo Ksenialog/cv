@@ -77,3 +77,6 @@ const binarySearch = (array, element) => {
 console.log(binarySearch([3], 3)) // true
 console.log(binarySearch([1, 2, 3, 4, 5], 4)) // true
 console.log(binarySearch([1, 2, 3, 5, 6], 4)) // false
+
+
+const factorial = (n) => (n <= 1) ? 1 : (n * factorial(n - 1));

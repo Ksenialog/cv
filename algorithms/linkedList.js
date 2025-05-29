@@ -1,5 +1,3 @@
-// Напишите функцию printList(list), которая выводит элементы списка по одному.
-// Сделайте два варианта решения: используя цикл и через рекурсию.
 
 let list = {
   value: 1,
@@ -20,14 +18,46 @@ const printList = (list) => {
   if (list.next) printList(list.next)
 }
 
-printList(list)
-
-const printList2 = (list) => {
-  let temporary = list
-  while (temporary) {
-    console.log(temporary.value)
-    temporary = temporary.next
+const findTheMiddleOfLinkedList = (list) => {
+  let slow = list
+  let fast = list
+  
+  while (fast && fast.next) {
+    slow = slow.next
+    fast = fast.next.next
   }
+  
+  return slow
 }
 
-printList2(list)
+console.log(findTheMiddleOfLinkedList(list))
+
+const reverseLinkedList = (list) => {
+  let node = null
+  
+  while (list) {
+    const temporary = list.next
+    list.next = node
+    node = list
+    list = temporary
+  }
+  
+  return node
+}
+
+
+const reverseLinkedList2 = (head) => {
+  let prev = null;
+  let current = head;
+  
+  while (current !== null) {
+    const nextTemp = current.next;
+    current.next = prev;
+    prev = current;
+    current = nextTemp;
+  }
+  
+  return prev;
+}
+
+console.log(reverseLinkedList(list))

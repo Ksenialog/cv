@@ -80,3 +80,10 @@ console.log(binarySearch([1, 2, 3, 5, 6], 4)) // false
 
 
 const factorial = (n) => (n <= 1) ? 1 : (n * factorial(n - 1));
+
+const isPowerOfFour = function(n) {
+  if (n <= 0) {
+    return false
+  }
+  return Number.isInteger(Math.log(n) / Math.log(4))
+};
